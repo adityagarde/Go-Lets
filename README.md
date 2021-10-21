@@ -3,6 +3,7 @@
 - Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
 - The Gopher is the official mascot of the Go Language. 
 <img src = https://miro.medium.com/max/1400/1*jnT9eoQMlc96bGxTnIbK9g.jpeg width=300>
+
 ### 0. Getting Started
 - [Download and Install](https://golang.org/doc/install)
 
@@ -26,7 +27,7 @@ $$ go version
 ```go
 go run main.go
 
-go help <command>
+go help // go help <command>
 
 go env GOPATH
 ```
