@@ -39,3 +39,27 @@ go env GOPATH
 - Is Go Object Oriented ?
     - Yes and No. Although Go has types and methods and *allows* an object-oriented style of programming, there is no type hierarchy.
 
+#### **Variable and Constant Declaration -**
+
+- General Variable declaration - [Examples](https://github.com/adityagarde/Go-Lets/blob/main/02variables/main.go)
+```go
+// 1. Explicitly mentioning the type
+var username string = "Aditya Garde";
+var smallValue uint8 = 255;
+// 2. Implicit Type detection
+var someString = "Aditya Garde";
+// 3. Short Variable declaration (Walrus Operation)
+someNumber := 347209.4590;
+```
+- In Go, we will get error if we don't use a variable for which we have assigned some value.
+- Short Variable declaration (using `:=`) is allowed ONLY inside a function and not outside.
+- Constants can be declared using `const` keyword.
+```go
+const LoginToken string = "Sherlock Holmes"
+const Pi = 3.14159265358979323846
+```
+
+#### **Scope of Variables -** 
+
+- In Go, all identifiers are lexically (statically) scoped, i.e. scope of a variable can be determined at compile time.
+- **Local Variables** are variables declared inside function or block and **Global Variables** are variables declared outside some function or block.

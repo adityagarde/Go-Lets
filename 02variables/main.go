@@ -7,6 +7,8 @@ var myVariable = "Some Value"
 
 const LoginToken string = "Sherlock Holmes" // variable name starts with Capital letter => Public
 
+const Pi = 3.14159265358979323846
+
 func main() {
 	var username string = "Aditya Garde"
 	fmt.Println(username)
@@ -46,5 +48,8 @@ func main() {
 
 	fmt.Println(LoginToken)
 	fmt.Printf("Variable is of type : %T \n ", LoginToken)
+
+	fmt.Printf("Pi == %f \n", Pi)
+	fmt.Printf("Variable is of type : %T \n ", Pi)
 
 }
