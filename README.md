@@ -58,8 +58,5 @@ someNumber := 347209.4590;
 const LoginToken string = "Sherlock Holmes"
 const Pi = 3.14159265358979323846
 ```
-
-#### **Scope of Variables -** 
-
 - In Go, all identifiers are lexically (statically) scoped, i.e. scope of a variable can be determined at compile time.
 - **Local Variables** are variables declared inside function or block and **Global Variables** are variables declared outside some function or block.
