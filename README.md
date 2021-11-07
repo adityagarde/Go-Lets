@@ -23,8 +23,6 @@ $$ go version
 go run main.go
 
 go help // go help <command>
-
-go env GOPATH
 ```
 
 ### 1. Go Fundamentals
@@ -60,3 +58,46 @@ const Pi = 3.14159265358979323846
 ```
 - In Go, all identifiers are lexically (statically) scoped, i.e. scope of a variable can be determined at compile time.
 - **Local Variables** are variables declared inside function or block and **Global Variables** are variables declared outside some function or block.
+
+#### **Packages**
+
+- A package is a collection of source files in the same directory that are compiled together. Functions, types, variables, and constants defined in one source file are visible to all other source files within the same package.
+
+- The first statement in a Go source file must be package name. Executable commands must always use package main.
+
+- A Go repository typically contains only one module, located at the root of the repository. A file named [`go.mod`](https://github.com/adityagarde/Go-Lets/tree/main/03userinput) there declares the module path - the import path prefix for all packages within the module.
+```go
+$ go mod init example/user/hello
+```
+- Standard packages can be searched [here](https://pkg.go.dev/).
+
+#### [**Taking User Input**](https://github.com/adityagarde/Go-Lets/blob/main/03userinput/main.go)
+
+```go
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println("User Input : ")
+
+	// comma ok OR comma err syntax - nearly equals for try catch
+	input, _ := reader.ReadString('\n')
+```
+
+#### **Environment Variables**
+
+- To check environment variables -
+```go
+$ go env
+$ go env <NAME> //go env GOPATH
+```
+- To change the current property -
+```go
+$ go env -w <NAME>=<VALUE> //go env -w GOBIN=/some/dfferent/bin
+```
+- To unset a variable previously set by `go env -w` -
+```go
+$ go env -u GOBIN
+```
+- Build for any OS (MocOS, Windows, Linux) can be build from any host OS using the environment `GOOS` (and NOT `GOHOSTOS`)
+```go
+$ go build //default
+$ GOOS="linux" go build // "darwin", "windows"
+```
