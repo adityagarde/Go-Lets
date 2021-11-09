@@ -101,3 +101,19 @@ $ go env -u GOBIN
 $ go build //default
 $ GOOS="linux" go build // "darwin", "windows"
 ```
+
+### 2. Memory Management
+
+- Memory allocation and de-allocation happens automatically in Golang.
+- `new()` vs `make()`
+    - `new()` 
+        - Memory is allocated, but is **not** initialized.
+        - You will get a memory address.
+        - Zeroed Storage.
+    - `make()` - Generally preferred.
+        - Memory is allocated and initialized as well.
+        - You will get a memory address.
+        - Non - Zeroed Storage.
+- Garbage collection happens automatically. Anything which becomes out of scope or nil is available for garbage collection.
+    - The `GOGC` variable sets the initial garbage collection target percentage.
+    - A collection is triggered when the ratio of freshly allocated data to live data remaining after the previous collection reaches this percentage. The default value is GOGC=100.
