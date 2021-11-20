@@ -42,10 +42,10 @@ go help // go help <command>
 - General Variable declaration - [Examples](https://github.com/adityagarde/Go-Lets/blob/main/02variables/main.go)
 ```go
 // 1. Explicitly mentioning the type
-var username string = "Aditya Garde";
+var username string = "Aditya Garde"
 var smallValue uint8 = 255;
 // 2. Implicit Type detection
-var someString = "Aditya Garde";
+var someString = "Aditya Garde"
 // 3. Short Variable declaration (Walrus Operation)
 someNumber := 347209.4590;
 ```
@@ -117,3 +117,27 @@ $ GOOS="linux" go build // "darwin", "windows"
 - Garbage collection happens automatically. Anything which becomes out of scope or nil is available for garbage collection.
     - The `GOGC` variable sets the initial garbage collection target percentage.
     - A collection is triggered when the ratio of freshly allocated data to live data remaining after the previous collection reaches this percentage. The default value is GOGC=100.
+
+#### **Pointers**
+
+-  A pointer holds the memory address of a value (variable).
+- Instead of passing the value of the variable (which can be big, or can be changed by some other operation contextually) - we just pass the address location to that variable / value, ensuring only the correct value from the memory location is picked.
+
+- The `&` operator generates a pointer to its operand.
+- The `*` operator denotes the pointer's underlying value.
+```go
+    i := 42
+	ptr := &i         // point to i
+    fmt.Println("ptr == ", ptr)  // random memory location
+	fmt.Println("*ptr == ", *ptr) // read i through the pointer, actual value
+	*ptr = *ptr + 20         // set i through the pointer
+	fmt.Println("i == ", i)  // see the new value of i
+    fmt.Println("*ptr == ", i)
+```
+output - 
+```go
+ptr ==  0xc000018030
+*ptr ==  42
+i ==  62
+*ptr ==  62
+```
