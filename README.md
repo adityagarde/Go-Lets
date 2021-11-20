@@ -127,15 +127,15 @@ $ GOOS="linux" go build // "darwin", "windows"
 - The `*` operator denotes the pointer's underlying value.
 ```go
     i := 42
-	ptr := &i         // point to i
+    ptr := &i         // point to i
     fmt.Println("ptr == ", ptr)  // random memory location
-	fmt.Println("*ptr == ", *ptr) // read i through the pointer, actual value
-	*ptr = *ptr + 20         // set i through the pointer
-	fmt.Println("i == ", i)  // see the new value of i
+    fmt.Println("*ptr == ", *ptr) // read i through the pointer, actual value
+    *ptr = *ptr + 20         // set i through the pointer
+    fmt.Println("i == ", i)  // see the new value of i
     fmt.Println("*ptr == ", i)
 ```
 output - 
-```go
+```text
 ptr ==  0xc000018030
 *ptr ==  42
 i ==  62
