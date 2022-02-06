@@ -141,3 +141,17 @@ ptr ==  0xc000018030
 i ==  62
 *ptr ==  62
 ```
+
+### Some commands for go modules
+
+- `go mod tidy`
+- `go mod verify`
+- `go list`
+- `go list all`
+- `go list -m all`
+- `go list -m -versions github.com/gorilla/mux`
+- `go mod why github.com/gorilla/mux`
+- `go mod graph`
+- `go mod edit -go 1.16` || `go mod edit -module newModuleName`
+- `go mod vendor`
+- `go run -mod=vendor main.go`
